@@ -1,6 +1,8 @@
 package hello.core;
 
+import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
+import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
 import hello.core.member.MemoryMemberRepository;
@@ -17,17 +19,26 @@ import hello.core.order.OrderServiceImpl;
 public class AppConfig {
 
     public MemberService memberService(){
-                                     // 생성자 주입
-        return new MemberServiceImpl(new MemoryMemberRepository());
         /**
          * MemberServiceImpl 은 MemoryMemberRepository 인  추상에만 의존하면 됨
          * 구체 클래스를 몰라도 된다
          * AppConfig -> MemoryMemberRepository  생성
          * AppConfig -> MemberServiceImpl 생성 + 주입
          */
+
+                                     // 생성자 주입
+        return new MemberServiceImpl(memberRepository());
     }
 
     public OrderService orderService(){
-        return new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
+    }
+
+    public MemberRepository memberRepository() {
+        return new MemoryMemberRepository();
+    }
+
+    public DiscountPolicy discountPolicy(){
+        return new FixDiscountPolicy();
     }
 }
