@@ -17,7 +17,6 @@ import hello.core.order.OrderServiceImpl;
  */
 
 public class AppConfig {
-
     public MemberService memberService(){
         /**
          * MemberServiceImpl 은 MemoryMemberRepository 인  추상에만 의존하면 됨
