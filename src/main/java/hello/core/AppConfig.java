@@ -9,6 +9,8 @@ import hello.core.member.MemberServiceImpl;
 import hello.core.member.MemoryMemberRepository;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * 애플리케이션에 대한 환경 구성
@@ -17,7 +19,10 @@ import hello.core.order.OrderServiceImpl;
  * 객체의 생성과 연결을 담당
  */
 
+@Configuration // 설정 정보
 public class AppConfig {
+
+    @Bean // 스프링 컨테이너너 등록 됨
     public MemberService memberService(){
         /**
          * MemberServiceImpl 은 MemoryMemberRepository 인  추상에만 의존하면 됨
@@ -30,16 +35,19 @@ public class AppConfig {
         return new MemberServiceImpl(memberRepository());
     }
 
+    @Bean
     public OrderService orderService(){
 
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
+    @Bean
     public MemberRepository memberRepository() {
 
         return new MemoryMemberRepository();
     }
 
+    @Bean
     public DiscountPolicy discountPolicy(){
         //return new FixDiscountPolicy();
         return new RateDiscountPolicy();
