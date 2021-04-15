@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ApplicationContextSameBeanFindTest {
 
-    // 타입으로 조회사 같은 타입의 스프링 빈이 둘 이상이면 오류가 발생
+    // 타입으로 조회 시 같은 타입의 스프링 빈이 둘 이상이면 오류가 발생
     // -> 빈이름을 지정 하자
     // ac.getBeanOfType() 을 사용하면 해당 타입의 모든 빈을 조회할 수 있다
 
