@@ -21,6 +21,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration // 설정 정보
 public class AppConfig {
 
+
+    // @Bean  memberService -> new MemoryMemberRepository()
+    // @Bean  orderService  -> new MemoryMemberRepository()
+
     @Bean // 스프링 컨테이너너 등록 됨
     public MemberService memberService(){
         /**
@@ -30,19 +34,21 @@ public class AppConfig {
          * AppConfig -> MemberServiceImpl 생성 + 주입
          */
 
+        System.out.println("call AppConfig.memberService");
+
                                      // 생성자 주입
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public OrderService orderService(){
-
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
     public MemberRepository memberRepository() {
-
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
