@@ -27,6 +27,7 @@ public class StatefulServiceTest {
 
         // ※ 공유필드 주의 ※ 스프링 빈은 항상 무상태(stateless)로 설계하자.
 
+
     }
 
     static class TestConfig{
