@@ -31,5 +31,4 @@
 
 #### DI 의존성 주입
 *예제코드)*
-* OrderServiceImpl 은 DiscountPolicy 인터페이스에 의존한다. 실제 어떤 구현 객체가 사용될지는 모
-른다.
+* OrderServiceImpl 은 DiscountPolicy 인터페이스에 의존한다. 실제 어떤 구현 객체가 사용될지는 모른다.
