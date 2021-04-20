@@ -24,9 +24,22 @@ public class OrderServiceImpl implements OrderService{
      @Autowired 매칭
         1. 타입 매칭
         2. 타입 매칭의 결과가 2개 이상일 때 필드 명, 파라미터 명으로 빈 이름 매칭
+
+     @Qualifier
+        추가 구분자를 붙여주는 방법
+        ex) RateDiscountPolicy -> @Qualifier("mainDiscountPolicy")
+            FixDiscountPolicy  -> @Qualifier("fixDiscountPolicy")
+
+     @Primary
+         우선순위를 정하는 방법
+         @Autowired 시에 여러 빈이 매칭되면 @Primary 가 우선권을 가진다.
+
+      +) @Primary 는 기본값 처럼 동작하는 것이고, @Qualifier 는 매우 상세하게 동작하며,
+         @Qualifier 가 더 우선순위가 높다
+         
      */
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
