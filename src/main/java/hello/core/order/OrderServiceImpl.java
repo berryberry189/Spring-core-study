@@ -18,7 +18,8 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    @Autowired
+
+    // @Component or @Bean 클래스 안에 생성자가 하나만 존재한다면, @Autowired 를 생략해도 자동 주입된다.
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
