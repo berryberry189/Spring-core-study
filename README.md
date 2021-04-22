@@ -1,6 +1,17 @@
 # [인프런] 스프링 핵심 원리 - 기본
 ***
 
+// 목차
+- [SOLID](#SOLID)
+- [스프링 컨테이너](https://www.notion.so/94ac4e7898e842d58bec9ca567c92d63)
+- [설정 형식 지원 - 자바코드, XML](https://www.notion.so/XML-ef8e8cfbd6764a17a0157b14482f10e2)
+- [BeanDefinition](https://www.notion.so/BeanDefinition-550bafc69e9b4ad792edeaa081451a8b)
+- [싱글톤, @Configuration](https://www.notion.so/Configuration-dfc12e57ce5a4d15852fa0dbcd19040e)
+- [@Component, @Autowired](https://www.notion.so/Component-Autowired-d37c307d592d4d78910008714a11a3f0)
+
+
+
+
 ## SOLID
 *좋은 객체지향 설계의 5가지 법칙*
 
@@ -32,3 +43,4 @@
 #### DI 의존성 주입
 *예제코드)*
 * OrderServiceImpl 은 DiscountPolicy 인터페이스에 의존한다. 실제 어떤 구현 객체가 사용될지는 모른다.
+
