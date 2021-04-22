@@ -1,7 +1,7 @@
 # [인프런] 스프링 핵심 원리 - 기본
 ***
 
-// 목차
+## 목차
 - [SOLID](#SOLID)
 - [스프링 컨테이너](https://www.notion.so/94ac4e7898e842d58bec9ca567c92d63)
 - [설정 형식 지원 - 자바코드, XML](https://www.notion.so/XML-ef8e8cfbd6764a17a0157b14482f10e2)
