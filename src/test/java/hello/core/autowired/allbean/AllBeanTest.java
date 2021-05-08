@@ -44,7 +44,6 @@ public class AllBeanTest {
             System.out.println("policies = " + policies);
         }
 
-
         public int discount(Member member, int price, String discountCode) {
             DiscountPolicy discountPolicy = policyMap.get(discountCode);
             return discountPolicy.discount(member, price);
