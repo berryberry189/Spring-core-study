@@ -11,7 +11,6 @@
 - [@Component, @Autowired](https://www.notion.so/Component-Autowired-d37c307d592d4d78910008714a11a3f0)
 
 
-
 ## SOLID
 *좋은 객체지향 설계의 5가지 법칙*
 
